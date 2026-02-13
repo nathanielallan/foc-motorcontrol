@@ -14,6 +14,6 @@ typedef struct {
     float out_max;
 } pi_t;
 
-void  pi_init(pi_t* c, float kp, float ki, float min, float max);
-float pi_update(pi_t* c, float error, float dt);
-void  pi_reset(pi_t* c);
+void  pi_init(pi_t* pi, float kp, float ki, float out_min, float out_max);
+float pi_update(pi_t* pi, float setpoint, float measurement, float dt);
+void  pi_reset(pi_t* pi);
